@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://g5yugdc33vcs"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_wh6bi"]
+[ext_resource type="Script" path="res://TestLevel.gd" id="2_6nb2g"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_wh6bi")
+
+[node name="TestLevel" type="Node2D" parent="."]
+script = ExtResource("2_6nb2g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TestLevel"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TestLevel/StaticBody2D"]
+polygon = PackedVector2Array(0, 128, 56, 96, 80, 120, 136, 120, 187, 68, 216, 136, 248, 104, 264, 104, 280, 120, 320, 152, 320, 184, 0, 184)
+
+[node name="Polygon2D" type="Polygon2D" parent="TestLevel/StaticBody2D/CollisionPolygon2D"]
+
+[node name="MainMenu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="MainMenu"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 42.0
+offset_right = 241.0
+offset_bottom = 68.0
+text = "idk godot platofrmer"
+
+[node name="StartButton" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 88.0
+offset_right = 196.0
+offset_bottom = 126.0
+text = "start t "
+
+[node name="QuitButton" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 133.0
+offset_right = 204.0
+offset_bottom = 169.0
+text = "quit!!!"
+
+[connection signal="pressed" from="MainMenu/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MainMenu/QuitButton" to="." method="_on_quit_button_pressed"]
