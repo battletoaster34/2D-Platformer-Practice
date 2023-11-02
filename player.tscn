@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://nx5unntdhghb"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_04qvq"]
+[ext_resource type="Texture2D" uid="uid://3bx7ioklf6ow" path="res://Seagull.png" id="2_ffesb"]
+[ext_resource type="Texture2D" uid="uid://n4m7p0ws8o3l" path="res://SeagullRight.png" id="3_7qx7e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bk8ae"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ffesb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7qx7e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0y6a7"]
+radius = 13.0
+height = 34.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+floor_snap_length = 2.9
+script = ExtResource("1_04qvq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(77, 32)
+scale = Vector2(0.843749, 0.78125)
+sprite_frames = SubResource("SpriteFrames_bk8ae")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(79, 32)
+shape = SubResource("CapsuleShape2D_0y6a7")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(79, 56)
+scale = Vector2(21.6306, 16.4426)
+limit_left = -200
+limit_top = -500
+limit_right = 400
+limit_bottom = 200
+drag_vertical_enabled = true
+drag_bottom_margin = 0.4
+editor_draw_limits = true

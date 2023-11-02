@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://g5yugdc33vcs"]
+[gd_scene load_steps=4 format=3 uid="uid://g5yugdc33vcs"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_wh6bi"]
 [ext_resource type="Script" path="res://TestLevel.gd" id="2_6nb2g"]
+[ext_resource type="PackedScene" uid="uid://nx5unntdhghb" path="res://player.tscn" id="3_3jbkb"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_wh6bi")
@@ -46,6 +47,10 @@ offset_top = 133.0
 offset_right = 204.0
 offset_bottom = 169.0
 text = "quit!!!"
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_3jbkb")]
+position = Vector2(24, 10)
+scale = Vector2(0.68, 0.68)
 
 [connection signal="pressed" from="MainMenu/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MainMenu/QuitButton" to="." method="_on_quit_button_pressed"]

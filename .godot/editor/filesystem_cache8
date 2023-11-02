@@ -1,0 +1,10 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1698925848
+Camera2D.gd::GDScript::-1::1698925709::0::1::::<>Camera2D<>::
+Main.gd::GDScript::-1::1698925736::0::1::::<>Node<>::
+main.tscn::PackedScene::484557638058407882::1698925780::0::1::::<><>::res://Main.gd<>res://TestLevel.gd<>uid://nx5unntdhghb::::res://player.tscn
+player.gd::GDScript::-1::1698925736::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::961793585052461327::1698925780::0::1::::<><>::res://player.gd<>res://Seagull.png<>uid://n4m7p0ws8o3l::::res://SeagullRight.png
+Seagull.png::CompressedTexture2D::1968806078140901638::1698925848::1698925848::1::::<><>::
+SeagullRight.png::CompressedTexture2D::973108498975618851::1698925709::1698925709::1::::<><>::
+TestLevel.gd::GDScript::-1::1698925708::0::1::::<>Node2D<>::
