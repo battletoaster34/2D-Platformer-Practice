@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n4m7p0ws8o3l"
-path="res://.godot/imported/SeagullRight.png-b5b9b58232ec76050caa0ef5ade8ca6a.ctex"
+uid="uid://17uqab85q7jb"
+path="res://.godot/imported/Seagulljump1.png-0cab950d405fa9b0d5a314f1a978e9d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SeagullRight.png"
-dest_files=["res://.godot/imported/SeagullRight.png-b5b9b58232ec76050caa0ef5ade8ca6a.ctex"]
+source_file="res://Seagulljump1.png"
+dest_files=["res://.godot/imported/Seagulljump1.png-0cab950d405fa9b0d5a314f1a978e9d8.ctex"]
 
 [params]
 

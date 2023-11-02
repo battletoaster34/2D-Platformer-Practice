@@ -1,21 +1,51 @@
-[gd_scene load_steps=6 format=3 uid="uid://nx5unntdhghb"]
+[gd_scene load_steps=11 format=3 uid="uid://nx5unntdhghb"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_04qvq"]
+[ext_resource type="Texture2D" uid="uid://17uqab85q7jb" path="res://Seagulljump1.png" id="2_6cwxm"]
 [ext_resource type="Texture2D" uid="uid://3bx7ioklf6ow" path="res://Seagull.png" id="2_ffesb"]
-[ext_resource type="Texture2D" uid="uid://n4m7p0ws8o3l" path="res://SeagullRight.png" id="3_7qx7e"]
+[ext_resource type="Texture2D" uid="uid://gyyg37k0uf4q" path="res://Seagullidle2.png" id="3_shup4"]
+[ext_resource type="Texture2D" uid="uid://bs5v15g3wmapv" path="res://Seagulljump2.png" id="3_vqy1u"]
+[ext_resource type="Texture2D" uid="uid://b8wm012qsdto5" path="res://SeagullRight1.png" id="6_510a0"]
+[ext_resource type="Texture2D" uid="uid://n4m7p0ws8o3l" path="res://SeagullRight2.png" id="6_w3hbi"]
+[ext_resource type="Texture2D" uid="uid://yw77st0xre7w" path="res://SeagullRight3.png" id="8_lcwnj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bk8ae"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_6cwxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vqy1u")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_ffesb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_7qx7e")
+"texture": ExtResource("3_shup4")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_510a0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_w3hbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lcwnj")
+}],
+"loop": true,
+"name": &"right",
+"speed": 24.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0y6a7"]
@@ -30,6 +60,7 @@ script = ExtResource("1_04qvq")
 position = Vector2(77, 32)
 scale = Vector2(0.843749, 0.78125)
 sprite_frames = SubResource("SpriteFrames_bk8ae")
+animation = &"right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(79, 32)
@@ -38,9 +69,9 @@ shape = SubResource("CapsuleShape2D_0y6a7")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(79, 56)
 scale = Vector2(21.6306, 16.4426)
-limit_left = -200
+limit_left = -1
 limit_top = -500
-limit_right = 400
+limit_right = 1000
 limit_bottom = 200
 drag_vertical_enabled = true
 drag_bottom_margin = 0.4

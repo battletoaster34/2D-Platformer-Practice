@@ -13,6 +13,8 @@ func _physics_process(delta):
 
 	if not is_on_floor():
 		velocity.y += gravity * delta
+		$AnimatedSprite2D.animation = "Jump"
+		$AnimatedSprite2D.play()
 		
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -20,6 +22,15 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
+	if is_on_floor():
+		if velocity.x != 0:
+			$AnimatedSprite2D.animation = "right"
+			$AnimatedSprite2D.flip_v = false
+			$AnimatedSprite2D.flip_h = velocity.x < 0
+			$AnimatedSprite2D.play()
+		else:
+			$AnimatedSprite2D.animation = "idle"
+			$AnimatedSprite2D.play()
 	var direction = Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
