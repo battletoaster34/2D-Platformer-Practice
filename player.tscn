@@ -38,9 +38,8 @@ shape = SubResource("CapsuleShape2D_0y6a7")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(79, 56)
 scale = Vector2(21.6306, 16.4426)
-limit_left = -200
-limit_top = -500
-limit_right = 400
+limit_left = 0
+limit_right = 3000
 limit_bottom = 200
 drag_vertical_enabled = true
 drag_bottom_margin = 0.4
