@@ -13,7 +13,7 @@ script = ExtResource("2_6nb2g")
 [node name="StaticBody2D" type="StaticBody2D" parent="TestLevel"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TestLevel/StaticBody2D"]
-polygon = PackedVector2Array(0, 128, 56, 96, 80, 120, 136, 120, 187, 68, 216, 136, 248, 104, 264, 104, 280, 120, 320, 152, 320, 184, 0, 184)
+polygon = PackedVector2Array(0, 0, 24, 0, 24, 128, 64, 128, 64, 104, 104, 104, 104, 160, 136, 160, 136, 96, 152, 96, 200, 64, 240, 96, 256, 96, 256, 128, 280, 128, 296, 96, 296, 0, 320, 0, 320, 184, 0, 184)
 
 [node name="Polygon2D" type="Polygon2D" parent="TestLevel/StaticBody2D/CollisionPolygon2D"]
 
@@ -49,6 +49,10 @@ offset_bottom = 169.0
 text = "quit!!!"
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_3jbkb")]
+position = Vector2(-4, 6)
+floor_stop_on_slope = false
+floor_constant_speed = false
+floor_snap_length = 3.0
 
 [connection signal="pressed" from="MainMenu/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MainMenu/QuitButton" to="." method="_on_quit_button_pressed"]
