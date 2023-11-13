@@ -8,7 +8,7 @@ const JUMP_VELOCITY = -350.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-@onready var coyote_jump_timer = $CoyoteJumpTimer # gives acces to timer
+@onready var cyotejump_timer = $cyotejumpTimer
 
 
 func _physics_process(delta):
@@ -23,18 +23,24 @@ func _physics_process(delta):
 	
 	_apply_friction(input_axis, delta)
 
+	var was_on_floor = is_on_floor() # is it on floor before character moves
+	
 	move_and_slide()
+	
+	var just_left_ledge = was_on_floor and not is_on_floor() and velocity.y <=0 # if on floor before but not after you on ledge(if going up no jumpies for you)
+	if just_left_ledge:            # starts timer if left ledge
+		cyotejump_timer.start()
 
 func _apply_gravity(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		
 func _handle_jump():
-	if is_on_floor():
+	if is_on_floor() or cyotejump_timer.time_left >0.0: # can also jump if timer is on
 		if Input.is_action_just_pressed("ui_accept"):
 			velocity.y = JUMP_VELOCITY
 	#makes a short jump if the jump button is pressed for a short time
-		else:
+		if not is_on_floor(): # fixes the break our new if statement makes
 			if Input.is_action_just_released("ui_accept") and velocity.y < JUMP_VELOCITY / 2:
 				velocity.y = JUMP_VELOCITY / 2
 				
