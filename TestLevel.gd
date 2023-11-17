@@ -4,5 +4,5 @@ extends Node2D
 @onready var polygon_2d = $StaticBody2D/CollisionPolygon2D/Polygon2D
 
 
-func _ready():
-	polygon_2d.polygon = collision_polygon_2d.polygon
+# Called when the node enters the scene tree for the first time.
+
