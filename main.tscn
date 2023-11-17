@@ -120,10 +120,9 @@ text = "quit!!!"
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_3jbkb")]
 position = Vector2(-12, 65)
-floor_stop_on_slope = false
-floor_constant_speed = false
-floor_snap_length = 3.0
 scale = Vector2(0.68, 0.68)
+floor_stop_on_slope = false
+floor_snap_length = 3.0
 
 [connection signal="pressed" from="MainMenu/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MainMenu/QuitButton" to="." method="_on_quit_button_pressed"]

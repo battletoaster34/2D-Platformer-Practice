@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 200.0
+var SPEED = 200.0
 const ACCELERATION = 800.0
 const FRICTION = 1000.0
 var insidesomething = false
@@ -27,16 +27,19 @@ func _physics_process(delta):
 		
 	_apply_friction(input_axis, delta)
 
-	_handle_crouch(input_axis, delta)
-	_handle_animation(input_axis, delta)
+	_handle_crouch()
+	_handle_animation()
+	
+	_reset()
 
 	move_and_slide()
 		
 			
 		
-		
+func _apply_gravity(delta):
+	if not is_on_floor():
+		velocity.y += gravity * delta
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 func _handle_jump():
 	if insidesomething == false:
 		if Input.is_action_just_pressed("ui_accept"):
@@ -94,8 +97,6 @@ func _handle_animation():
 				$AnimatedSprite2D.play()	
 	
 
-
-
 func removeselffromarray(arrayc):
 		if len(arrayc) > 1:
 			for x in arrayc:
@@ -104,7 +105,12 @@ func removeselffromarray(arrayc):
 		else:
 			if self in arrayc:
 				arrayc.erase(arrayc[0])
-
+				
+func _reset():
+	if Input.is_action_pressed("Reset"):
+		position.x=0
+		position.y=0
+		
 
 var abovesensorlist
 var abovesensorlist2
@@ -118,6 +124,10 @@ func _on_area_2d_2_body_entered(body):
 
 
 func _on_area_2d_2_body_exited(body):
+	abovesensorlist = $Area2D2.get_overlapping_bodies()
+	removeselffromarray(abovesensorlist)
+	if self not in abovesensorlist2 and abovesensorlist2 != abovesensorlist:
+		insidesomething = false
 func _apply_friction(input_axis, delta):
 	if input_axis == 0:
 		velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
