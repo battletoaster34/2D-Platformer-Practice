@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4ptpc81otlqn"]
+
+[ext_resource type="Script" path="res://GameOver.gd" id="1_g2ocb"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_g2ocb")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 6.0
+offset_right = 228.0
+offset_bottom = 56.0
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="RetryButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 52.0
+offset_right = 233.0
+offset_bottom = 83.0
+text = "Retry"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 98.0
+offset_right = 234.0
+offset_bottom = 129.0
+text = "Quit"
+
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

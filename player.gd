@@ -9,6 +9,10 @@ var crouching = false
 var sprinting = false
 const JUMP_VELOCITY = -350.0
 
+var coins = 0
+var lives = 3
+
+
 signal position_changed(position)
 
 
@@ -41,7 +45,6 @@ func _physics_process(delta):
 	move_and_slide()
 	emit_signal("position_changed", self.global_position)
 		
-			
 		
 func _apply_gravity(delta):
 	if not is_on_floor():
@@ -196,3 +199,10 @@ func _on_interaction_radius_body_entered(body):
 
 func _on_interaction_radius_body_exited(body):
 	pass # Replace with function body.
+
+
+func _on_coin_sendcoin():
+	coins+=1
+	if coins == 100:
+		lives+=1
+		coins = 0

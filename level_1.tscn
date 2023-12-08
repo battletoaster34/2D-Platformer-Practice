@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2qb87p8ov1pc"]
+[gd_scene load_steps=8 format=3 uid="uid://c2qb87p8ov1pc"]
 
 [ext_resource type="Script" path="res://TestLevel.gd" id="1_0dian"]
 [ext_resource type="Texture2D" uid="uid://bl2o6mdoma7ih" path="res://whitepng.png" id="2_8te5g"]
 [ext_resource type="PackedScene" uid="uid://nx5unntdhghb" path="res://player.tscn" id="3_sm7bb"]
+[ext_resource type="PackedScene" uid="uid://4cwegqq0m4dd" path="res://coin.tscn" id="4_fcb61"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xxn51"]
 texture = ExtResource("2_8te5g")
@@ -87,3 +88,7 @@ shape = SubResource("RectangleShape2D_n7i4j")
 
 [node name="Player" parent="." instance=ExtResource("3_sm7bb")]
 position = Vector2(-32, 32)
+
+[node name="Coin" parent="." instance=ExtResource("4_fcb61")]
+
+[connection signal="sendcoin" from="Coin" to="Player" method="_on_coin_sendcoin"]
