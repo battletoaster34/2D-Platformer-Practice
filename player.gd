@@ -9,6 +9,9 @@ var crouching = false
 var sprinting = false
 const JUMP_VELOCITY = -350.0
 
+signal position_changed(position)
+
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var coyote_jump_timer = $CoyoteJumpTimer # gives acces to timer
@@ -36,6 +39,7 @@ func _physics_process(delta):
 	_reset()
 
 	move_and_slide()
+	emit_signal("position_changed", self.global_position)
 		
 			
 		
@@ -167,3 +171,28 @@ func _apply_friction(input_axis, delta):
 func _handle_acceleration(input_axis, delta):
 	if input_axis != 0:
 		velocity.x = move_toward(velocity.x, SPEED * input_axis, ACCELERATION * delta)
+		
+var interactiblesinrange
+func _interactionradiusfunctioning():
+	pass
+		
+
+
+
+func _on_interaction_radius_body_entered(body):
+	interactiblesinrange = $InteractionRadius.get_overlapping_bodies()
+	removeselffromarray(interactiblesinrange)
+	if len(interactiblesinrange) > 1:
+		for x in interactiblesinrange:
+			if str("TileMapLevel1") in str(x):
+				interactiblesinrange.erase(x)
+	else:
+		if "TileMapLevel1" in str(interactiblesinrange):
+			interactiblesinrange.erase(interactiblesinrange[0])
+	#
+
+	
+
+
+func _on_interaction_radius_body_exited(body):
+	pass # Replace with function body.

@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://bc5nnmdns3f0j"]
+
+[ext_resource type="Texture2D" uid="uid://d2c6j5s01euv" path="res://textbox.png" id="1_6veqq"]
+[ext_resource type="Texture2D" uid="uid://b50umal3d4sa7" path="res://textbox2.png" id="2_qe1a0"]
+[ext_resource type="FontFile" uid="uid://bivt7vs4x0xdk" path="res://DETERMINATIONSANSWEBREGULAR-369X.TTF" id="3_iafkc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m7lc4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6veqq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qe1a0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2ej2c"]
+font = ExtResource("3_iafkc")
+font_size = 20
+font_color = Color(0.333333, 0, 0, 1)
+
+[node name="DialogueBox" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 1.0
+offset_right = 5.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.40717, 0.235023)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(151.042, 73.5683)
+scale = Vector2(0.965857, 1.39772)
+sprite_frames = SubResource("SpriteFrames_m7lc4")
+frame_progress = 0.17112
+
+[node name="Label" type="Label" parent="AnimatedSprite2D"]
+offset_left = -105.526
+offset_top = -43.5021
+offset_right = 174.474
+offset_bottom = 60.4979
+scale = Vector2(0.79559, 0.704844)
+text = "Chicken nuggets have invaded my 
+village, need your help to take 
+back our land. Only the bravest 
+warrior can do it, are you up for it?"
+label_settings = SubResource("LabelSettings_2ej2c")

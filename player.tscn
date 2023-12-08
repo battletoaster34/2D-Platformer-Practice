@@ -1,38 +1,39 @@
-[gd_scene load_steps=37 format=3 uid="uid://nx5unntdhghb"]
+[gd_scene load_steps=38 format=3 uid="uid://nx5unntdhghb"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_04qvq"]
-[ext_resource type="Texture2D" uid="uid://c0rwnx60vpa77" path="res://Seagulljump1.png" id="2_6cwxm"]
-[ext_resource type="Texture2D" uid="uid://bswlgh600xcit" path="res://Seagull.png" id="2_ffesb"]
-[ext_resource type="Texture2D" uid="uid://cdfenug8r250a" path="res://Seagullidle2.png" id="3_shup4"]
-[ext_resource type="Texture2D" uid="uid://cvlawuqsh2oyq" path="res://Seagulljump2.png" id="3_vqy1u"]
-[ext_resource type="Texture2D" uid="uid://b7py6d17yywku" path="res://Deadpancrouch1.png" id="4_1i2en"]
-[ext_resource type="Texture2D" uid="uid://dk7dnir2nd71j" path="res://Sprint1.png" id="4_86wmo"]
-[ext_resource type="Texture2D" uid="uid://cyqhcgocxhtvm" path="res://Deadpancrouch2.png" id="5_aqfyx"]
-[ext_resource type="Texture2D" uid="uid://b8q8c5hwim3qa" path="res://Sprint2.png" id="5_xpeiw"]
-[ext_resource type="Texture2D" uid="uid://dmwsblx54hq2m" path="res://Sprint3.png" id="6_5dxv7"]
-[ext_resource type="Texture2D" uid="uid://cxtiq3hsratsu" path="res://SeagullRight1.png" id="6_510a0"]
-[ext_resource type="Texture2D" uid="uid://gkh7dropwxgy" path="res://Deadpancrouch3.png" id="6_hudrx"]
-[ext_resource type="Texture2D" uid="uid://7vm7mrxlk35v" path="res://SeagullRight2.png" id="6_w3hbi"]
-[ext_resource type="Texture2D" uid="uid://dmkorv2vwt7xx" path="res://Sprint4.png" id="7_g02os"]
-[ext_resource type="Texture2D" uid="uid://d0sjnu8ues8a2" path="res://Deadpancrouch4.png" id="7_mmsv4"]
-[ext_resource type="Texture2D" uid="uid://soneliue3j8a" path="res://Sidecrouch1.png" id="8_ij742"]
-[ext_resource type="Texture2D" uid="uid://d3shttufniigp" path="res://SeagullRight3.png" id="8_lcwnj"]
-[ext_resource type="Texture2D" uid="uid://c2c0ifvv4rur6" path="res://Sidecrouch2.png" id="9_y0rsl"]
-[ext_resource type="Texture2D" uid="uid://e2ods28dtwrc" path="res://Sidecrouch3.png" id="10_2wbnu"]
-[ext_resource type="Texture2D" uid="uid://cx4nihmk4b1by" path="res://Sidecrouch4.png" id="11_f38p6"]
-[ext_resource type="Texture2D" uid="uid://b2vn66rn62b0e" path="res://scm1.png" id="17_ngbku"]
-[ext_resource type="Texture2D" uid="uid://damlybr5ovthg" path="res://scm2.png" id="18_7nroa"]
-[ext_resource type="Texture2D" uid="uid://482t8vqnlx3y" path="res://scm3.png" id="19_1wlwy"]
-[ext_resource type="Texture2D" uid="uid://kic6oygf6fel" path="res://scm4.png" id="20_xolxb"]
+[ext_resource type="Texture2D" uid="uid://17uqab85q7jb" path="res://Seagulljump1.png" id="2_6cwxm"]
+[ext_resource type="Texture2D" uid="uid://3bx7ioklf6ow" path="res://Seagull.png" id="2_ffesb"]
+[ext_resource type="Texture2D" uid="uid://gyyg37k0uf4q" path="res://Seagullidle2.png" id="3_shup4"]
+[ext_resource type="Texture2D" uid="uid://bs5v15g3wmapv" path="res://Seagulljump2.png" id="3_vqy1u"]
+[ext_resource type="Texture2D" uid="uid://bg586e0emmvow" path="res://Deadpancrouch1.png" id="4_1i2en"]
+[ext_resource type="Texture2D" uid="uid://d3wxggbaiu3ly" path="res://Sprint1.png" id="4_86wmo"]
+[ext_resource type="Texture2D" uid="uid://cx41sqcrqqpds" path="res://Deadpancrouch2.png" id="5_aqfyx"]
+[ext_resource type="Texture2D" uid="uid://dmm8x4a18xi52" path="res://Sprint2.png" id="5_xpeiw"]
+[ext_resource type="Texture2D" uid="uid://ecuowo42p3kx" path="res://Sprint3.png" id="6_5dxv7"]
+[ext_resource type="Texture2D" uid="uid://b8wm012qsdto5" path="res://SeagullRight1.png" id="6_510a0"]
+[ext_resource type="Texture2D" uid="uid://c0ch4uy32arvq" path="res://Deadpancrouch3.png" id="6_hudrx"]
+[ext_resource type="Texture2D" uid="uid://n4m7p0ws8o3l" path="res://SeagullRight2.png" id="6_w3hbi"]
+[ext_resource type="Texture2D" uid="uid://bkyfdwmhtmwi4" path="res://Sprint4.png" id="7_g02os"]
+[ext_resource type="Texture2D" uid="uid://s6xqrrj8i260" path="res://Deadpancrouch4.png" id="7_mmsv4"]
+[ext_resource type="Texture2D" uid="uid://d08w26vlj3rht" path="res://Sidecrouch1.png" id="8_ij742"]
+[ext_resource type="Texture2D" uid="uid://yw77st0xre7w" path="res://SeagullRight3.png" id="8_lcwnj"]
+[ext_resource type="Texture2D" uid="uid://cd7jgex603f4f" path="res://Sidecrouch2.png" id="9_y0rsl"]
+[ext_resource type="Texture2D" uid="uid://croppc5fsrwja" path="res://Sidecrouch3.png" id="10_2wbnu"]
+[ext_resource type="Texture2D" uid="uid://g6j5moo0mman" path="res://Sidecrouch4.png" id="11_f38p6"]
+[ext_resource type="Texture2D" uid="uid://kv6fxn36efee" path="res://scm1.png" id="17_ngbku"]
+[ext_resource type="Texture2D" uid="uid://63xo2nrc0esn" path="res://scm2.png" id="18_7nroa"]
+[ext_resource type="Texture2D" uid="uid://cdkguf5s181ph" path="res://scm3.png" id="19_1wlwy"]
+[ext_resource type="Texture2D" uid="uid://b5lss0hlbwvv2" path="res://scm4.png" id="20_xolxb"]
 [ext_resource type="PackedScene" uid="uid://dmkvr74xvfko3" path="res://coltest.tscn" id="22_ntyw0"]
-[ext_resource type="Texture2D" uid="uid://c5ybqcs25v6sk" path="res://sprintidle1.png" id="25_an77n"]
-[ext_resource type="Texture2D" uid="uid://bf2260f4s47yo" path="res://sprintidle2.png" id="26_5u8bg"]
-[ext_resource type="Texture2D" uid="uid://djgv6onbs1h8d" path="res://sprintidle3.png" id="27_ej78u"]
-[ext_resource type="Texture2D" uid="uid://bq88ngul7f6m8" path="res://sprintidle4.png" id="28_0r04x"]
-[ext_resource type="Texture2D" uid="uid://bhfk8mfhm77x1" path="res://sprintidle5.png" id="29_sqsbc"]
-[ext_resource type="Texture2D" uid="uid://g483r0wiio18" path="res://sprintidle6.png" id="30_mfwoq"]
-[ext_resource type="Texture2D" uid="uid://bs8ex0ipal8n8" path="res://sprintidle7.png" id="31_qvn2o"]
-[ext_resource type="Texture2D" uid="uid://ge5ehdtkix5x" path="res://sprintidle8.png" id="32_wxoox"]
+[ext_resource type="Texture2D" uid="uid://pj3gu1xn4su" path="res://sprintidle1.png" id="25_an77n"]
+[ext_resource type="Texture2D" uid="uid://bmfbnryju8amf" path="res://sprintidle2.png" id="26_5u8bg"]
+[ext_resource type="Texture2D" uid="uid://b5m4ultqjofca" path="res://sprintidle3.png" id="27_ej78u"]
+[ext_resource type="Texture2D" uid="uid://djkqf6dhvakf" path="res://sprintidle4.png" id="28_0r04x"]
+[ext_resource type="Texture2D" uid="uid://dwdbgre7g764t" path="res://sprintidle5.png" id="29_sqsbc"]
+[ext_resource type="Texture2D" uid="uid://cqcnm0t2115s3" path="res://sprintidle6.png" id="30_mfwoq"]
+[ext_resource type="Texture2D" uid="uid://djd0hkldh3twm" path="res://sprintidle7.png" id="31_qvn2o"]
+[ext_resource type="Texture2D" uid="uid://wjlpqu6c5woj" path="res://sprintidle8.png" id="32_wxoox"]
+[ext_resource type="PackedScene" uid="uid://crl76crymy1vu" path="res://Interactionradius.tscn" id="34_l1dfn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bk8ae"]
 animations = [{
@@ -186,22 +187,28 @@ height = 34.0
 radius = 9.0
 height = 26.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(82, 38)
 floor_snap_length = 2.9
 script = ExtResource("1_04qvq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(77, 32)
+position = Vector2(-2.00003, -2)
 scale = Vector2(0.843749, 0.78125)
 sprite_frames = SubResource("SpriteFrames_bk8ae")
 animation = &"Sprint"
 
+[node name="Area2D" parent="AnimatedSprite2D" instance=ExtResource("34_l1dfn")]
+position = Vector2(2.37041, 0)
+scale = Vector2(4.16709, 4.30641)
+interaction_parent = NodePath("../..")
+
 [node name="Standinghitbox" type="CollisionShape2D" parent="."]
-position = Vector2(79, 32)
+position = Vector2(-3.05176e-05, -2)
 shape = SubResource("CapsuleShape2D_0y6a7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(79, 56)
+position = Vector2(-3.05176e-05, 22)
 scale = Vector2(21.6306, 16.4426)
 limit_left = -200
 limit_top = -500
@@ -212,12 +219,12 @@ drag_bottom_margin = 0.4
 editor_draw_limits = true
 
 [node name="Crouchinghitbox" type="CollisionShape2D" parent="."]
-position = Vector2(79, 41)
+position = Vector2(-3.05176e-05, 7)
 rotation = 1.57065
 shape = SubResource("CapsuleShape2D_oiqnh")
 
 [node name="Area2D2" parent="." instance=ExtResource("22_ntyw0")]
-position = Vector2(250, 31)
+position = Vector2(171, -3)
 
 [node name="CoyoteJumpTimer" type="Timer" parent="."]
 wait_time = 0.2
