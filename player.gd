@@ -41,8 +41,12 @@ func _physics_process(delta):
 	_handle_animation()
 	
 	_reset()
-
+	var was_on_floor = is_on_floor()
 	move_and_slide()
+	var just_left_ledge = was_on_floor and not is_on_floor() and velocity.y >=0
+	if just_left_ledge:
+		coyote_jump_timer.start()
+	
 	emit_signal("position_changed", self.global_position)
 		
 		
@@ -53,13 +57,13 @@ func _apply_gravity(delta):
 		$AnimatedSprite2D.play()
 	# Get the input direction and handle the movement/deceleration.
 func _handle_jump():
-	if is_on_floor():
+	if is_on_floor() or coyote_jump_timer.time_left >0.0:
 		if insidesomething == false:
 			if Input.is_action_just_pressed("Jump"):
 				velocity.y = JUMP_VELOCITY
 				#makes a short jump if the jump button is pressed for a short time
 
-		else:
+		if not is_on_floor():
 			if Input.is_action_just_pressed("Jump"):
 				velocity.y = JUMP_VELOCITY
 	#makes a short jump if the jump button is pressed for a short time
