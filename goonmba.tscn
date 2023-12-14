@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bq3aqusrfgiye"]
+
+[ext_resource type="Script" path="res://Goonmba.gd" id="1_8rwex"]
+[ext_resource type="Texture2D" uid="uid://dblc3je7fpp8r" path="res://sprintidle1.png" id="2_myywi"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lgeub"]
+radius = 17.0
+height = 48.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_74ytx"]
+radius = 18.0
+height = 48.0
+
+[node name="Goonmba" type="CharacterBody2D"]
+script = ExtResource("1_8rwex")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_myywi")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(1, 0)
+shape = SubResource("CapsuleShape2D_lgeub")
+
+[node name="RayCast2DL" type="RayCast2D" parent="."]
+position = Vector2(-20, -1)
+target_position = Vector2(0, 29)
+
+[node name="RayCast2DR" type="RayCast2D" parent="."]
+position = Vector2(20, 0)
+target_position = Vector2(0, 28)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_74ytx")
