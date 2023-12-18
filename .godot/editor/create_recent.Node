@@ -1,0 +1,15 @@
+Label
+Button
+VBoxContainer
+CenterContainer
+TileMap
+CanvasLayer
+ColorRect
+AnimationPlayer
+Node
+CollisionShape2D
+StaticBody2D
+Control
+Container
+Sprite2D
+Area2D

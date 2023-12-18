@@ -1,0 +1,10 @@
+res://main.tscn
+res://player.tscn
+res://level_completed.tscn
+res://level_one.tscn
+res://level_two.tscn
+res://level_three.tscn
+res://level_transition.tscn
+res://victory_screen.gd
+res://player.gd
+res://victory_screen.tscn

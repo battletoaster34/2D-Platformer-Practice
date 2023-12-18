@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@export var next_level: PackedScene
 
 var SPEED = 150.0
 const ACCELERATION = 800.0
@@ -12,7 +13,7 @@ const JUMP_VELOCITY = -350.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var coyote_jump_timer = $CoyoteJumpTimer # gives acces to timer
-
+@onready var level_completed = $CanvasLayer/LevelCompleted
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -139,6 +140,9 @@ func _reset():
 		position.x=0
 		position.y=0
 		
+	if position.y > 200:
+		position.x =0
+		position.y = 0
 
 var abovesensorlist
 var abovesensorlist2
@@ -167,3 +171,20 @@ func _apply_friction(input_axis, delta):
 func _handle_acceleration(input_axis, delta):
 	if input_axis != 0:
 		velocity.x = move_toward(velocity.x, SPEED * input_axis, ACCELERATION * delta)
+
+#Level transitons
+func _ready():
+	Events.level_completed.connect(show_level_completed)
+	
+
+func show_level_completed():
+	level_completed.show()
+	get_tree().paused = true
+	if not next_level is PackedScene: 
+		next_level = load("res://victory_screen.tscn")
+	await LevelTransition.fade_to_black()
+	get_tree().paused = false
+	get_tree().change_scene_to_packed(next_level)
+	LevelTransition.fade_from_black()
+	#get_tree().paused = true
+
